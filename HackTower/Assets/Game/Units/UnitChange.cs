@@ -5,8 +5,8 @@ using UnityEngine;
 public class UnitChange : MonoBehaviour
 {
     SpriteRenderer MainSpriteRenderer;
-    public Sprite [] SpriteBox = new Sprite[4];
-    int i = 0;
+    public Sprite [] SpriteBox = new Sprite[3];
+    int i = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class UnitChange : MonoBehaviour
     {
         MainSpriteRenderer.sprite = SpriteBox[i];
         i++;
-        if (i == 4) i = 0;
+        if (i == 3) i = 0;
     }
 
 }
