@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserSensorController : MonoBehaviour
+public class BiribiriController : MonoBehaviour
 {
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +13,5 @@ public class LaserSensorController : MonoBehaviour
     {
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
-
-
 
 }
