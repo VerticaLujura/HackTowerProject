@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class TileRootMaker : MonoBehaviour
 {
     public Vector3Int StartPosition;
-    public List<Vector3Int> RootList = new List<Vector3Int>();
+    public static List<Vector3Int> RootList = new List<Vector3Int>();
   
     void RootMake(){
         var tm= this.gameObject.GetComponent<Tilemap>();

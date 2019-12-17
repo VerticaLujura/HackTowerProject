@@ -11,7 +11,7 @@ public class EnemyExample : MonoBehaviour
     int rootIndex = 0;
 
     private void Initial(){
-         root = GameObject.Find("WayTile").GetComponent<TileRootMaker>().RootList;
+        root=TileRootMaker.RootList;
         this.gameObject.transform.position = root[root.Count-1];
         rootIndex = root.Count-1;
     }

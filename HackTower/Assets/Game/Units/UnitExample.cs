@@ -9,13 +9,11 @@ public class UnitExample : MonoBehaviour
     float defaultMoveCoolTime=1;
     float moveCoolTime=1;
     int rootIndex=0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        root=GameObject.Find("WayTile").GetComponent<TileRootMaker>().RootList;
+    void Initial(){
+        root=TileRootMaker.RootList;
         this.gameObject.transform.position=root[0];
     }
-    void Update(){
+    void Move(){
         moveCoolTime-=Time.deltaTime;
         if(moveCoolTime<0){
             rootIndex++;
@@ -24,6 +22,11 @@ public class UnitExample : MonoBehaviour
             moveCoolTime=defaultMoveCoolTime;
         }
     }
+
+    void Start()
+        {Initial();}
+    void Update()
+        {Move();}
 
    
 }

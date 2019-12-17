@@ -673,7 +673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartPosition: {x: -7, y: -3, z: 0}
-  RootList: []
 --- !u!1 &274649723
 GameObject:
   m_ObjectHideFlags: 0
