@@ -9,16 +9,14 @@ public class EnemyExample : MonoBehaviour
     float defaultMoveCoolTime = 1;
     float moveCoolTime = 1;
     int rootIndex = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        root = GameObject.Find("WayTile").GetComponent<TileRootMaker>().RootList;
+
+    private void Initial(){
+         root = GameObject.Find("WayTile").GetComponent<TileRootMaker>().RootList;
         this.gameObject.transform.position = root[root.Count-1];
         rootIndex = root.Count-1;
     }
-    void Update()
-    {
-        moveCoolTime -= Time.deltaTime;
+    private void Move(){
+         moveCoolTime -= Time.deltaTime;
         if (moveCoolTime < 0)
         {
             rootIndex--;
@@ -27,6 +25,17 @@ public class EnemyExample : MonoBehaviour
             moveCoolTime = defaultMoveCoolTime;
         }
     }
+    private void Action(Collider2D arg){
+        Debug.Log(this.gameObject+":"+arg.gameObject+"に接触");
+    }
+    
+
+    void Start()
+        {Initial();}
+    void Update()
+        {Move();}
+    void OnTriggerEnter2D(Collider2D target)
+        {Action(target);}
 
 
 }

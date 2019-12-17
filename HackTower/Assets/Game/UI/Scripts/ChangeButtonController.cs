@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitChange : MonoBehaviour
+public class ChangeButtonController : MonoBehaviour
 {
-    SpriteRenderer MainSpriteRenderer;
+SpriteRenderer MainSpriteRenderer;
     public Sprite [] SpriteBox = new Sprite[3];
     int i = 1;
-    // Start is called before the first frame update
     void Start()
     {
         MainSpriteRenderer = GameObject.Find("UnitExample").gameObject.GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     public void OnClick()
     {
         Change();
@@ -25,6 +23,4 @@ public class UnitChange : MonoBehaviour
         i++;
         if (i == 3) i = 0;
     }
-
 }
-
