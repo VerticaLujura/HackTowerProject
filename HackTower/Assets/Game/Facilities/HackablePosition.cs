@@ -9,7 +9,9 @@ public class HackablePosition : MonoBehaviour
     public void Hacked(){
         action.SendMessage("HackedAction");
     }
-    public void Awake(){
+    public void Start(){
+        HackSystem=this.gameObject.transform.parent.parent.parent.gameObject;
+        //HackSystem=GameObject.Find("HackSystemDirector");
         HackSystem.GetComponent<HackSystemDirector>().hackablePositionList.Add(this.gameObject);
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8493463168193024117}
   - component: {fileID: 8493463168193024118}
   - component: {fileID: 8493463168193024119}
+  - component: {fileID: 114357394547305198}
   m_Layer: 0
   m_Name: ExampleUnit2
   m_TagString: Untagged
@@ -94,11 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4062b99340e2fa7469ffbd728de6443d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  hp: 0
-  attackPow: 0
-  hackPow: 0
-  speed: 0.02
+  direction: 1
+  indexOnRoot: 0
+  moveCoolTime: 1
 --- !u!61 &8493463168193024118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +108,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -146,3 +145,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &114357394547305198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8493463168193024112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97dab6723ddd6e4ab53013efbadbeb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 1
+  hp: 1
+  attackPow: 1
+  hackPow: 1

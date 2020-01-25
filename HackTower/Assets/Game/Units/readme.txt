@@ -1,1 +1,1 @@
-・UnitExampleは仮のユニットとしてお使いください
+もう全部colliderはtriggerで終わりで、いいんじゃない？(適当)
