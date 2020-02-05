@@ -43,12 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6646292b9ab08846a9c84be15c3524b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hackablePositionList: []
+  HackEffect: {fileID: 0}
   xSize: 10
   ySize: 10
-  HorizontalLineFacilityArray: []
-  VerticalLineFacilityArray: []
+  choosingX: 1
+  choosingXLine: {fileID: 1942542254764209256, guid: 76006c30dc03b8e4b85d2aad3a56c543,
+    type: 3}
+  choosingY: 1
+  choosingYLine: {fileID: 8416898144915695941, guid: de5a65e4267c0f24f8d53e42cfe9d699,
+    type: 3}
   HorizontalLineFacility: {fileID: 4151380334722853879, guid: 198b2d693dceee84a976b294044b73c6,
     type: 3}
   VerticalLineFacility: {fileID: 2007033501491206780, guid: 2f454e4657191414abf8d678d98dcb0f,
     type: 3}
-  LineFacilityList: []

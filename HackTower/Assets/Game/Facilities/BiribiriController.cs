@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class BiribiriController : MonoBehaviour
 {
+    public bool Hacked=false;
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
+        if(Hacked==false)Destroy(collision.gameObject);
     }
     
     public void HackedAction(){
-        Destroy(this.gameObject);
+        Hacked=true;
     }
 
 }

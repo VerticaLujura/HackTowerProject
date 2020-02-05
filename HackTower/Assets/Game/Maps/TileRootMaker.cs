@@ -22,7 +22,6 @@ public class TileRootMaker : MonoBehaviour
                     Debug.Log("終端"+RootList[n-1]);
                     break;
                     }
-                Debug.Log(n+" "+RootList.Count);
                 void func(Vector3Int gap){
                     if(tm.HasTile(RootList[n]+gap)){
                         if(n==0)RootList.Add(RootList[n]+gap);

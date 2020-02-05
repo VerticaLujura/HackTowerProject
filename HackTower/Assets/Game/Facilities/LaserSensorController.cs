@@ -6,7 +6,8 @@ public class LaserSensorController : MonoBehaviour
     public void HackedAction(){
         
         Debug.Log("ハッキングされました");
-        Destroy(this.gameObject);
+        this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

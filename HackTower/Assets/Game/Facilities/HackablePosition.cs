@@ -6,7 +6,9 @@ public class HackablePosition : MonoBehaviour
 {
     public Component action;
     public GameObject HackSystem;
+    public Sprite hackedSprite;
     public void Hacked(){
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = hackedSprite;
         action.SendMessage("HackedAction");
     }
     public void Start(){
