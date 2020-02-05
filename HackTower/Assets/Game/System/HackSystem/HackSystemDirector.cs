@@ -9,7 +9,7 @@ public class HackSystemDirector : MonoBehaviour
     public int hackPower=100;
     public GameObject HackPowerDisplayer;
     public int hackCost =30;
-    public List<GameObject> hackablePositionList=new List<GameObject>();
+    public List<GameObject> hackableFacilitiesList=new List<GameObject>();
     static Vector3Int Referenceosition=new Vector3Int();
     public GameObject HackEffect;
     public int xSize=10;
@@ -85,15 +85,19 @@ public class HackSystemDirector : MonoBehaviour
     
     void UnlockAction(int x,int y){
         Debug.Log("Unlock"+x+""+y);
-        for(int i=0;i<hackablePositionList.Count;i++){
-            GameObject hP=hackablePositionList[i];
+        for(int i=0;i<hackableFacilitiesList.Count;i++){
+            GameObject hP=hackableFacilitiesList[i];
             if(hP.transform.position.x==x &&hP.transform.position.y==y){
-                hP.GetComponent<HackablePosition>().Hacked();
+                hP.GetComponent<HackablePosition>().HackedSignalRepeater(true);
             }
         }
     }
     //ハックされた際に呼び出されます
     public void UnlockUpdate(){
+        for(int i=0;i<hackableFacilitiesList.Count;i++){
+            GameObject hP=hackableFacilitiesList[i];
+                hP.GetComponent<HackablePosition>().HackedSignalRepeater(false);
+        }
         for(int i=1;i<ySize;i++){
             for(int j=1;j<xSize;j++){
                 if(unlockedHorizontals[i].Hacked==true && unlockedVerticals[j].Hacked==true){
@@ -101,6 +105,7 @@ public class HackSystemDirector : MonoBehaviour
                 }
             }
         }
+        
     }
     public void UnlockVertical(int num){
         if(unlockedVerticals[num].Hacked==false){
@@ -148,7 +153,7 @@ public class HackSystemDirector : MonoBehaviour
         Initial();
     }
     public void Update(){
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetKeyDown(KeyCode.Space)){
             UnlockHorizontal(choosingY);
             UnlockVertical(choosingX);
         }

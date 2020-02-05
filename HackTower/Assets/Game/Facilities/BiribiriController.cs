@@ -13,5 +13,8 @@ public class BiribiriController : MonoBehaviour
     public void HackedAction(){
         Hacked=true;
     }
+    public void LockedAction(){
+        Hacked=false;
+    }
 
 }
