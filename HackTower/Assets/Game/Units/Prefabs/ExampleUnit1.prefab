@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   indexOnRoot: 0
+  defaultMoveCoolTime: 1
   moveCoolTime: 0.7
 --- !u!61 &7407216357487291955
 BoxCollider2D:
@@ -158,6 +159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
-  hp: 1
+  hp: 100
   attackPow: 1
   hackPow: 1

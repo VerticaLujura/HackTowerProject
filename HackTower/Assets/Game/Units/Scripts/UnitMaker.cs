@@ -5,8 +5,10 @@ using UnityEngine;
 public class UnitMaker : MonoBehaviour
 {
     public GameObject Unit;
-    public KeyCode Key; 
-
+    public KeyCode Key;
+    private void MakeUnit(){
+            Instantiate(Unit,Vector3Int.zero,Quaternion.identity,this.transform);
+            }
     void Start(){
         if(Key==KeyCode.None){
             Debug.Log("keyが不正");
@@ -14,7 +16,7 @@ public class UnitMaker : MonoBehaviour
     }
     void Update(){
         if(Input.GetKeyDown(Key)){
-            Instantiate(Unit);
+             MakeUnit();
         }
     }
 }

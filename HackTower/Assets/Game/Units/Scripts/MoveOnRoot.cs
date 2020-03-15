@@ -7,6 +7,7 @@ public class MoveOnRoot : MonoBehaviour
     public enum Direction{back=-1,stop=0,forward=1}
     public Direction direction=Direction.forward;
     public int indexOnRoot;
+    public float defaultMoveCoolTime=1; 
     public float moveCoolTime=1; 
     float deltaTime;
     List<Vector3Int> Root;
@@ -20,6 +21,14 @@ public class MoveOnRoot : MonoBehaviour
         deltaTime=0;
         }
     }
+    void multiplyMoveCoolTime(float mag){
+        moveCoolTime*=mag;
+    }
+    public void multiplyMoveCoolTime(float mag,float time){
+        moveCoolTime*=mag;
+        Invoke("ResetMoveCoolTime",time);
+    }
+    public void ResetMoveCoolTime(){moveCoolTime=defaultMoveCoolTime;}
 
     void Start(){
         Root=TileRootMaker.RootList;
